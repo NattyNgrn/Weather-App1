@@ -2,14 +2,12 @@ import { useState } from 'react'
 
 
 
-function Form() {
+function Form({onSearchChange}) {
     
-    const search = ({onSearchChange}) => {
-        const [search, setsearch] = useState("");
-        const handleOnChange = (searchData) => {
-            setsearch(searchData)
-            onSearchChange(searchData)
-        }
+    const [search, setSearch] = useState("");
+    const handleOnChange = (searchData) => {
+        setSearch(searchData.target.value);
+        onSearchChange(searchData.target.value);
     }
 
     return (
