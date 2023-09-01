@@ -1,37 +1,29 @@
-import temp from "../components/temp"
-import previous from "../components/previousCities"
-import hourly from "../components/hourly"
-import humidity from "../components/humidity"
-import sunrise from "../components/sunrise"
-import sunset from "../components/sunset"
 
-//city from use state in search cities.
+import "../style/searchCity.css";
 
-function CurrentWeather() {
+function CurrentWeather({city, weather}) {
+
 
 return (
     <div className="weather">
-        <h1>CITY</h1>
+        <h1 className="title">{city}</h1>
 
         <div className="top">
-            <h2>Temperature</h2>
-            <p>{temp}</p>
-            <h2>Previously searched cities:</h2>
-            <p>{previous}</p>
+            <h2>Forecast:</h2>
+            <p>{weather ? weather.list[0].weather[0].main : ""}</p>
+            <p>{weather ? weather.list[0].weather[0].description : ""}</p>
         </div>
-
         <div className="middle">
-            <h2>Hourly Forecast</h2>
-            <p>{hourly}</p>
+            <h2>Max Temperature</h2>
+            <p>{weather ? weather.list[0].temp.max : ""}</p>
+            <h2>Min Temperature</h2>
+            <p>{weather ? weather.list[0].temp.min : ""}</p>
         </div>
 
         <div className="bottom">
             <h2>Humidity</h2>
-            <p>{humidity}</p>
-            <h2>Sunrise</h2>
-            <p>{sunrise}</p>
-            <h2>Sunset</h2>
-            <p>{sunset}</p>
+            <p>{weather ? weather.list[0].humidity : ""}</p>
+            <p></p>
         </div>
     </div>
 )
