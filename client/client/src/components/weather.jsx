@@ -17,8 +17,6 @@ return (
         <p>{hourly}</p>
         <h2>Humidity</h2>
         <p>{humidity}</p>
-        <h2>UV Index</h2>
-        <p>{uv}</p>
     </div>
 )
 }
