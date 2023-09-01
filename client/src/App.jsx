@@ -9,11 +9,14 @@ const Link = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const handleOnSearchChange = (searchData) => {
+    console.log(searchData);
+  }
 
   return (
       <div className='container1'>
-        <Form onSearchChange={handleOnSearch}/>
+        <Form onSearchChange={handleOnSearchChange}/>
       </div>
   )
 }
