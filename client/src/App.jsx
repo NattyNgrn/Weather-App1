@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './style/App.css'
 import Form from "./components/form"
+import CurrentWeather from './components/weather';
 
 const API = "1ed1fa56d4b93f26d1176e875b4c26fe";
 
@@ -17,6 +18,7 @@ function App() {
   return (
       <div className='container1'>
         <Form onSearchChange={handleOnSearchChange}/>
+        <CurrentWeather/>
       </div>
   )
 }
